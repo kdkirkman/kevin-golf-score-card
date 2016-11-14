@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="jquery.simpleWeather.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="golf-gopher.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="golf-gopher.css">
+	<script src ="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+
+    <meta charset="UTF-8">
+    <title>Digital ScoreCard for Golf</title>
+</head>
+<body>
+
+<div class="modalbackground">
+    <div id="setupmodal">
+        <h3 style="text-align: center; padding-right: 30px; color: whitesmoke;">Configure Golf ScoreCard<img border="0" src="images/golfgolf.png"  width="240" height="140"></h3>
+		 <label style="color: whitesmoke; margin-right: 8px; margin-left: 4px;">Golf Course: </label><select
+			 id="courseSelect"
+			 onchange="loadCourse(this.value)"><option>Click Drop Down for Course Desired</option></select>
+		 <label style="color: whitesmoke;">Tee Type: </label><select id="teeType" style="margin: 5px;"></select>
+		 <input id="playercount" placeholder="How Many are Playing Today?" type="number" style=" margin: 30px; margin-right: 25px; margin-left: 116px;
+ width: 50%; text-align: center;">
+		 <br>
+		 <a href="javascript: begincard()" id="goButton" style="color: lawngreen; border: solid 1px; padding: 7px; border-radius: 4px;
+ margin: 0 auto; position: relative; width: 90%; left: 44%; right: 50%;">done</a>
+
+	 </div>
+ </div>
+
+
+ <div id="golfBanner">
+	 <h3 style="text-align: center; background-color: transparent; padding: 10px; font-size: 50px;">My Golf Score</h3>
+	 <h3 id="courseTitle" style="text-align: center; margin: 5px auto; "></h3>
+	 <h4 id="courseAddress" style="text-align: center; margin: 5px auto;"></h4>
+	 <h4 id="courseCity" style="text-align: center; margin: 5px auto;"></h4>
+	 <div id="weather"></div>
+
+ </div>
+
+
+ <div id="container">
+	 <table class="table table-striped">
+		 <tr id="tableHeader">
+			 <th id="playerName">Player Name</th>
+		 </tr>
+    </table>
+    <div id="cardLeft">
+    </div>
+    <div id="cardRight">
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
